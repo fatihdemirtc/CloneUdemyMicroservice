@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MongoDB.EntityFrameworkCore.Extensions;
-using System.Reflection.Emit;
-using UdemyNewMicroservice.Catalog.API.Feautures.Courses;
+using UdemyNewMicroservice.Catalog.Api.Features.Courses;
 
-namespace UdemyNewMicroservice.Catalog.API.Repositories
+namespace UdemyNewMicroservice.Catalog.Api.Repositories
 {
     public class CourseEntityConfiguration : IEntityTypeConfiguration<Course>
     {
@@ -17,18 +16,18 @@ namespace UdemyNewMicroservice.Catalog.API.Repositories
             builder.Property(x => x.Description).HasElementName("description").HasMaxLength(1000);
             builder.Property(x => x.Created).HasElementName("created");
             builder.Property(x => x.UserId).HasElementName("userId");
+            builder.Property(x => x.ImageUrl).HasElementName("imageUrl").HasMaxLength(200);
             builder.Property(x => x.CategoryId).HasElementName("categoryId");
-            builder.Property(x => x.Picture).HasElementName("picture");
             builder.Ignore(x => x.Category);
 
-            builder.OwnsOne(x => x.Feauture, feauture =>
-            {
-                feauture.HasElementName("feauture");
-                feauture.Property(x => x.Duration).HasElementName("duration");
-                feauture.Property(x => x.Rating).HasElementName("rating");
-                feauture.Property(x => x.EducatorFullName).HasElementName("educatorFullName").HasMaxLength(100);
-            });
 
+            builder.OwnsOne(c => c.Feature, feature =>
+            {
+                feature.HasElementName("feature");
+                feature.Property(x => x.Duration).HasElementName("duration");
+                feature.Property(x => x.Rating).HasElementName("rating");
+                feature.Property(x => x.EducatorFullName).HasElementName("educatorFullName").HasMaxLength(100);
+            });
         }
     }
 }

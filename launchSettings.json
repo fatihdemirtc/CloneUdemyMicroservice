@@ -4,7 +4,7 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "udemynewmicroservice.catalog.api": "StartDebugging"
+        "udemynewmicroservice.Catalog.API": "StartDebugging"
       }
     }
   }

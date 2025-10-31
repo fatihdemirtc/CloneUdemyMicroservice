@@ -1,22 +1,26 @@
+using UdemyNewMicroservice.Catalog.Api;
+using UdemyNewMicroservice.Catalog.Api.Features.Categories;
+using UdemyNewMicroservice.Catalog.Api.Features.Courses;
+using UdemyNewMicroservice.Catalog.Api.Options;
 using UdemyNewMicroservice.Catalog.API;
-using UdemyNewMicroservice.Catalog.API.Feautures.Categories;
-using UdemyNewMicroservice.Catalog.API.Options;
-using UdemyNewMicroservice.Catalog.API.Repositories;
-using UdemyNewMicroservice.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 builder.Services.AddOptionsExt();
 builder.Services.AddDatabaseServiceExt();
-
-builder.Services.AddCommonServices(typeof(CatalogAssembly));
-
+builder.Services.AddCommonServiceExt(typeof(CatalogAssembly));
+builder.Services.AddVersioningExt();
 
 var app = builder.Build();
-app.AddCategoryGroupEndpoitExt();
 
+app.AddSeedDataExt().ContinueWith(x =>
+{
+    Console.WriteLine(x.IsFaulted ? x.Exception?.Message : "Seed data has been saved successfully");
+});
+app.AddCategoryGroupEndpointExt(app.AddVersionSetExt());
+app.AddCourseGroupEndpointExt(app.AddVersionSetExt());
 
 if (app.Environment.IsDevelopment())
 {
@@ -24,5 +28,5 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.Run();
 
+app.Run();

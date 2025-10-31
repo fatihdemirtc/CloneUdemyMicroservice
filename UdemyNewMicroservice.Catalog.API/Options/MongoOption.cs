@@ -1,12 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UdemyNewMicroservice.Catalog.API.Options
+namespace UdemyNewMicroservice.Catalog.Api.Options
 {
     public class MongoOption
     {
-        [Required]
-        public string ConnectionString { get; set; }
-        [Required]
-        public string DatabaseName { get; set; }    
+        [Required] public string DatabaseName { get; set; } = default!;
+        [Required] public string ConnectionString { get; set; } = default!;
     }
 }

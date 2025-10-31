@@ -1,7 +1,7 @@
 ﻿using MongoDB.Driver;
-using UdemyNewMicroservice.Catalog.API.Options;
+using UdemyNewMicroservice.Catalog.Api.Options;
 
-namespace UdemyNewMicroservice.Catalog.API.Repositories
+namespace UdemyNewMicroservice.Catalog.Api.Repositories
 {
     public static class RepositoryExt
     {
@@ -9,15 +9,19 @@ namespace UdemyNewMicroservice.Catalog.API.Repositories
         {
             services.AddSingleton<IMongoClient, MongoClient>(sp =>
             {
-                var mongoDbOptions = sp.GetRequiredService<MongoOption>();
-                return new MongoClient(mongoDbOptions.ConnectionString);
+                var options = sp.GetRequiredService<MongoOption>();
+                return new MongoClient(options.ConnectionString);
             });
+
             services.AddScoped(sp =>
             {
                 var mongoClient = sp.GetRequiredService<IMongoClient>();
                 var options = sp.GetRequiredService<MongoOption>();
+
                 return AppDbContext.Create(mongoClient.GetDatabase(options.DatabaseName));
             });
+
+
             return services;
         }
     }

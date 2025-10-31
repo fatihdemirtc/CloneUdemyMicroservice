@@ -6,27 +6,29 @@ namespace UdemyNewMicroservice.Shared.Filters
 {
     public class ValidationFilter<T> : IEndpointFilter
     {
-        public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
+        public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context,
+            EndpointFilterDelegate next)
         {
             var validator = context.HttpContext.RequestServices.GetService<IValidator<T>>();
-
-            if (validator == null)
+            //Fast Fail
+            if (validator is null)
             {
                 return await next(context);
             }
 
-            var firstArg = context.Arguments.OfType<T>().FirstOrDefault();
+            var requestModel = context.Arguments.OfType<T>().FirstOrDefault();
 
-            if(firstArg == null)
+
+            if (requestModel is null)
             {
                 return await next(context);
             }
 
-            var validationResult = await validator.ValidateAsync(firstArg);
+            var validateResult = await validator.ValidateAsync(requestModel);
 
-            if (!validationResult.IsValid)
+            if (!validateResult.IsValid)
             {
-                return Results.ValidationProblem(validationResult.ToDictionary());
+                return Results.ValidationProblem(validateResult.ToDictionary());
             }
 
             return await next(context);

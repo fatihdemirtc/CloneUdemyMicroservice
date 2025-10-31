@@ -1,29 +1,31 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver;
 using System.Reflection;
-using UdemyNewMicroservice.Catalog.API.Feautures.Categories;
-using UdemyNewMicroservice.Catalog.API.Feautures.Courses;
+using MongoDB.Driver;
+using UdemyNewMicroservice.Catalog.Api.Features.Categories;
+using UdemyNewMicroservice.Catalog.Api.Features.Courses;
 
-namespace UdemyNewMicroservice.Catalog.API.Repositories
+namespace UdemyNewMicroservice.Catalog.Api.Repositories
 {
     public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {
         public DbSet<Course> Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+
         public static AppDbContext Create(IMongoDatabase database)
         {
-            var dbContextOptionsBuilder = new DbContextOptionsBuilder<AppDbContext>().
-                UseMongoDB(database.Client, database.DatabaseNamespace.DatabaseName);
+            var optionsBuilder =
+                new DbContextOptionsBuilder<AppDbContext>().UseMongoDB(database.Client,
+                    database.DatabaseNamespace.DatabaseName);
 
-            return new AppDbContext(dbContextOptionsBuilder.Options);
 
+            return new AppDbContext(optionsBuilder.Options);
         }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
         }
     }
 }

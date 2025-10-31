@@ -1,9 +1,10 @@
-﻿namespace UdemyNewMicroservice.Catalog.API.Feautures.Courses
+﻿namespace UdemyNewMicroservice.Catalog.Api.Features.Courses
 {
-    public class Feauture
+    public class Feature
     {
         public int Duration { get; set; }
         public float Rating { get; set; }
+
         public string EducatorFullName { get; set; } = default!;
     }
 }

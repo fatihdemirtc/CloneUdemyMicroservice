@@ -1,6 +1,6 @@
-﻿using FluentValidation;
+﻿using UdemyNewMicroservice.Catalog.API.Features.Categories.Create;
 
-namespace UdemyNewMicroservice.Catalog.API.Feautures.Categories.Create
+namespace UdemyNewMicroservice.Catalog.Api.Features.Categories.Create
 {
     public class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
     {

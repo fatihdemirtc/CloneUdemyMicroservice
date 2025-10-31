@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MongoDB.EntityFrameworkCore.Extensions;
-using System.Reflection.Emit;
-using UdemyNewMicroservice.Catalog.API.Feautures.Categories;
-using UdemyNewMicroservice.Catalog.API.Feautures.Courses;
+using UdemyNewMicroservice.Catalog.Api.Features.Categories;
 
-namespace UdemyNewMicroservice.Catalog.API.Repositories
+namespace UdemyNewMicroservice.Catalog.Api.Repositories
 {
     public class CategoryEntityConfiguration : IEntityTypeConfiguration<Category>
     {
@@ -14,7 +12,7 @@ namespace UdemyNewMicroservice.Catalog.API.Repositories
             builder.ToCollection("categories");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedNever();
-            builder.Ignore(x => x.Course);
+            builder.Ignore(x => x.Courses);
         }
     }
 }
