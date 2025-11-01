@@ -7,3 +7,4 @@ global using System.Net;
 global using UdemyNewMicroservice.Catalog.Api.Repositories;
 global using UdemyNewMicroservice.Shared;
 global using UdemyNewMicroservice.Shared.Extensions;
+
