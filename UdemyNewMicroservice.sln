@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{E8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Discount.API", "UdemyNewMicroservice.Discount.API\UdemyNewMicroservice.Discount.API.csproj", "{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "file", "file", "{21F9533F-18F0-4B78-9F78-30E0E2B207CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.File.API", "UdemyNewMicroservice.File.API\UdemyNewMicroservice.File.API.csproj", "{E6A3BADC-D4C0-4143-9D7F-339965564DAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A3BADC-D4C0-4143-9D7F-339965564DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A3BADC-D4C0-4143-9D7F-339965564DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A3BADC-D4C0-4143-9D7F-339965564DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A3BADC-D4C0-4143-9D7F-339965564DAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +73,8 @@ Global
 		{7914FE29-0C34-3AFA-33BE-8C151724AE68} = {7A57499D-A67B-4A35-A2BF-D2078D3D3455}
 		{E8EEEC63-3D54-4E10-A3D6-26177F27647F} = {31E27503-5468-43F4-9686-35FBF5A09E48}
 		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8} = {E8EEEC63-3D54-4E10-A3D6-26177F27647F}
+		{21F9533F-18F0-4B78-9F78-30E0E2B207CE} = {31E27503-5468-43F4-9686-35FBF5A09E48}
+		{E6A3BADC-D4C0-4143-9D7F-339965564DAA} = {21F9533F-18F0-4B78-9F78-30E0E2B207CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7F832CC-0A3D-4257-AC32-5F3285A4638B}
