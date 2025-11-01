@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Shared
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{F3DC8BF1-6AD8-480E-B4A1-24A618A20C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Discount.Api", "UdemyNewMicroservice.Discount.Api\UdemyNewMicroservice.Discount.Api.csproj", "{FB830607-D1D8-4AAC-879F-C1EB73334D42}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +37,6 @@ Global
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB830607-D1D8-4AAC-879F-C1EB73334D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB830607-D1D8-4AAC-879F-C1EB73334D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB830607-D1D8-4AAC-879F-C1EB73334D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB830607-D1D8-4AAC-879F-C1EB73334D42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,7 +48,6 @@ Global
 		{943C963D-BF40-437E-96EA-04D6DB2D21BC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7} = {943C963D-BF40-437E-96EA-04D6DB2D21BC}
 		{F3DC8BF1-6AD8-480E-B4A1-24A618A20C73} = {31E27503-5468-43F4-9686-35FBF5A09E48}
-		{FB830607-D1D8-4AAC-879F-C1EB73334D42} = {F3DC8BF1-6AD8-480E-B4A1-24A618A20C73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7F832CC-0A3D-4257-AC32-5F3285A4638B}
