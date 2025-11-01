@@ -1,39 +1,53 @@
+#region
+
+using Microsoft.EntityFrameworkCore;
+using UdemyNewMicroservice.Order.Api.Endpoints.Orders;
+using UdemyNewMicroservice.Order.Application;
+using UdemyNewMicroservice.Order.Application.BackgroundServices;
+using UdemyNewMicroservice.Order.Application.Contracts.Refit;
+using UdemyNewMicroservice.Order.Application.Contracts.Repositories;
+using UdemyNewMicroservice.Order.Application.Contracts.UnitOfWork;
+using UdemyNewMicroservice.Order.Persistence;
+using UdemyNewMicroservice.Order.Persistence.Repositories;
+using UdemyNewMicroservice.Order.Persistence.UnitOfWork;
+using UdemyNewMicroservice.Shared.Extensions;
+
+#endregion
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddCommonServiceExt(typeof(OrderApplicationAssembly));
+builder.Services.AddDbContext<AppDbContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
+});
+builder.Services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
+
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddVersioningExt();
+builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);
+builder.Services.AddRefitConfigurationExt(builder.Configuration);
+
+builder.Services.AddHostedService<CheckPaymentStatusOrderBackgroundService>();
 
 var app = builder.Build();
-
+app.AddOrderGroupEndpointExt(app.AddVersionSetExt());
 // Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment()) app.MapOpenApi();
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
