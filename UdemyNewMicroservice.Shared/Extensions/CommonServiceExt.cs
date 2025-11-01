@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
+using UdemyNewMicroservice.Shared.ExceptionHandlers;
+using UdemyNewMicroservice.Shared.Services;
 
 namespace UdemyNewMicroservice.Shared.Extensions
 {
@@ -13,9 +15,11 @@ namespace UdemyNewMicroservice.Shared.Extensions
 
             services.AddFluentValidationAutoValidation();
             services.AddValidatorsFromAssemblyContaining(assembly);
+            services.AddScoped<IIdentityService, IdentityServiceFake>();
 
 
             services.AddAutoMapper(assembly);
+            services.AddExceptionHandler<GlobalExceptionHandler>();
             return services;
         }
     }
