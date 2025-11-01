@@ -15,8 +15,6 @@ namespace UdemyNewMicroservice.Shared.Extensions
                 options.AssumeDefaultVersionWhenUnspecified = true;
                 options.ReportApiVersions = true;
                 options.ApiVersionReader = new UrlSegmentApiVersionReader();
-                //options.ApiVersionReader = ApiVersionReader.Combine(new HeaderApiVersionReader(),
-                //    new QueryStringApiVersionReader(), new UrlSegmentApiVersionReader());
             }).AddApiExplorer(options =>
             {
                 options.GroupNameFormat = "'v'V";

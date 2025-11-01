@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36603.0 d17.14
+VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -16,6 +16,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{943C963D-BF40-437E-96EA-04D6DB2D21BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Shared", "UdemyNewMicroservice.Shared\UdemyNewMicroservice.Shared.csproj", "{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "basket", "basket", "{7A57499D-A67B-4A35-A2BF-D2078D3D3455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Basket.API", "UdemyNewMicroservice.Basket.API\UdemyNewMicroservice.Basket.API.csproj", "{7914FE29-0C34-3AFA-33BE-8C151724AE68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{E8EEEC63-3D54-4E10-A3D6-26177F27647F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Discount.API", "UdemyNewMicroservice.Discount.API\UdemyNewMicroservice.Discount.API.csproj", "{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +43,14 @@ Global
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7914FE29-0C34-3AFA-33BE-8C151724AE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7914FE29-0C34-3AFA-33BE-8C151724AE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7914FE29-0C34-3AFA-33BE-8C151724AE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7914FE29-0C34-3AFA-33BE-8C151724AE68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +61,10 @@ Global
 		{17CFC417-E685-489A-9B18-F2DCCCB7C7CE} = {15C831AC-CCFD-47AB-878F-3B0C8920610A}
 		{943C963D-BF40-437E-96EA-04D6DB2D21BC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{FF1DD811-D3F6-4BE0-8D74-1593B6677FC7} = {943C963D-BF40-437E-96EA-04D6DB2D21BC}
+		{7A57499D-A67B-4A35-A2BF-D2078D3D3455} = {31E27503-5468-43F4-9686-35FBF5A09E48}
+		{7914FE29-0C34-3AFA-33BE-8C151724AE68} = {7A57499D-A67B-4A35-A2BF-D2078D3D3455}
+		{E8EEEC63-3D54-4E10-A3D6-26177F27647F} = {31E27503-5468-43F4-9686-35FBF5A09E48}
+		{88D73F9E-C041-4F73-9E7F-BF4AFA118FE8} = {E8EEEC63-3D54-4E10-A3D6-26177F27647F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7F832CC-0A3D-4257-AC32-5F3285A4638B}
