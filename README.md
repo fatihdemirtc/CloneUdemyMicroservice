@@ -8,13 +8,44 @@ The solution consists of the following microservices:
 
 - **Catalog API**: Manages product catalog and categories
 - **Basket API**: Handles shopping cart operations
-- **Order API**: Processes and manages orders
-  - Order.Domain: Contains domain entities and business logic
-  - Order.Application: Application layer with business rules
-  - Order.Persistence: Data persistence layer
+- **Order Service**: Processes and manages orders (DDD-based architecture)
+  - **Order.Api**: API endpoints and service configuration
+  - **Order.Domain**: Domain entities, value objects, and business logic
+  - **Order.Application**: Application services, CQRS commands/queries, and business rules
+  - **Order.Persistence**: Data persistence, repositories, and EF Core configurations
 - **Discount API**: Manages discount and promotion operations
+- **Payment API**: Handles payment processing and transactions
 - **File API**: Handles file upload and management operations
-- **Shared Library**: Common utilities and shared components
+- **Shared Library**: Common utilities and shared components across services
+
+## Service Architecture
+
+### Order Service (DDD Implementation)
+Our Order Service follows Domain-Driven Design principles with a clean architecture approach:
+
+- **Domain Layer** (Order.Domain)
+  - Core business logic
+  - Domain entities and value objects
+  - Domain events
+  - Business rules and validations
+
+- **Application Layer** (Order.Application)
+  - CQRS implementation with MediatR
+  - Command and Query handlers
+  - Application services
+  - DTOs and mappings
+
+- **Infrastructure Layer** (Order.Persistence)
+  - Database context and configurations
+  - Repositories implementation
+  - Data migrations
+  - External service integrations
+
+- **API Layer** (Order.Api)
+  - REST endpoints
+  - API versioning
+  - Request/Response models
+  - Dependency injection configuration
 
 ## Technical Stack
 
@@ -29,6 +60,7 @@ The solution consists of the following microservices:
 ## Features
 
 - Microservices Architecture
+- Domain-Driven Design (DDD)
 - CQRS Pattern Implementation
 - REST API with versioning
 - Global Exception Handling
@@ -36,6 +68,7 @@ The solution consists of the following microservices:
 - File Upload Capabilities
 - Shopping Cart Management
 - Order Processing
+- Payment Processing
 - Discount Management
 - Product Catalog Management
 
@@ -70,6 +103,7 @@ dotnet run --project ./UdemyNewMicroservice.Catalog.API
 dotnet run --project ./UdemyNewMicroservice.Basket.API
 dotnet run --project ./UdemyNewMicroservice.Order.Api
 dotnet run --project ./UdemyNewMicroservice.Discount.API
+dotnet run --project ./UdemyNewMicroservice.Payment.API
 dotnet run --project ./UdemyNewMicroservice.File.API
 ```
 
@@ -80,6 +114,7 @@ Each microservice exposes its own API endpoints:
 - Catalog API: `/api/v{version}/categories`, `/api/v{version}/products`
 - Basket API: `/api/v{version}/basket`
 - Order API: `/api/v{version}/orders`
+- Payment API: `/api/v{version}/payments`
 - Discount API: `/api/v{version}/discounts`
 - File API: `/api/v{version}/files`
 
