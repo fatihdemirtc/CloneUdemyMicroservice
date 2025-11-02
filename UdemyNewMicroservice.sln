@@ -49,6 +49,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "payment", "payment", "{73B4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Payment.API", "UdemyNewMicroservice.Payment.API\UdemyNewMicroservice.Payment.API.csproj", "{64D23B20-A9C0-4D4D-8AF0-683B07774EED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{B820B5C7-464E-42D5-8429-3E06685A94A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNewMicroservice.Gateway", "UdemyNewMicroservice.Gateway\UdemyNewMicroservice.Gateway.csproj", "{47C06794-0584-4F7C-B81D-5E5F6DB10802}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,10 @@ Global
 		{64D23B20-A9C0-4D4D-8AF0-683B07774EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64D23B20-A9C0-4D4D-8AF0-683B07774EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64D23B20-A9C0-4D4D-8AF0-683B07774EED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C06794-0584-4F7C-B81D-5E5F6DB10802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C06794-0584-4F7C-B81D-5E5F6DB10802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C06794-0584-4F7C-B81D-5E5F6DB10802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C06794-0584-4F7C-B81D-5E5F6DB10802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +133,8 @@ Global
 		{881EA503-6D5D-484A-A203-3CC1D87AB805} = {985E8140-1667-4F22-9256-1D0E8A4EC723}
 		{73B4214B-2D21-4B53-B86A-97D144FC55D5} = {31E27503-5468-43F4-9686-35FBF5A09E48}
 		{64D23B20-A9C0-4D4D-8AF0-683B07774EED} = {73B4214B-2D21-4B53-B86A-97D144FC55D5}
+		{B820B5C7-464E-42D5-8429-3E06685A94A6} = {31E27503-5468-43F4-9686-35FBF5A09E48}
+		{47C06794-0584-4F7C-B81D-5E5F6DB10802} = {B820B5C7-464E-42D5-8429-3E06685A94A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7F832CC-0A3D-4257-AC32-5F3285A4638B}
