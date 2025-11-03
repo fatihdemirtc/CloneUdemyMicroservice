@@ -9,11 +9,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
     <PackageReference Include="MongoDB.EntityFrameworkCore" Version="9.0.3" />
-    <PackageReference Include="NewId" Version="4.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UdemyNewMicroservice.Bus\UdemyNewMicroservice.Bus.csproj" />
     <ProjectReference Include="..\UdemyNewMicroservice.Shared\UdemyNewMicroservice.Shared.csproj" />
   </ItemGroup>
 
